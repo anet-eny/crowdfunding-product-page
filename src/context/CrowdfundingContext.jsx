@@ -30,4 +30,25 @@ export function CrowdfundingProvider({ children }) {
       };
     });
   }
+
+  function toggleBookmark() {
+    setState((prev) => ({ ...prev, bookmarked: !prev.bookmarked }));
+  }
+
+  function resetData() {
+    localStorage.removeItem("crowdfunding-data");
+    setState(initialState);
+  }
+
+  useEffect(() => {
+    localStorage.setItem("crowdfunding-data", JSON.stringify(state));
+  }, [state]);
+
+  return (
+    <CrowdfundingContext.Provider
+      value={{ state, makePledge, toggleBookmark, resetData }}
+    >
+      {children}
+    </CrowdfundingContext.Provider>
+  );
 }
