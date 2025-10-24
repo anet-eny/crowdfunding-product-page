@@ -28,7 +28,7 @@ export default function Header({ onOpenMenu }) {
 
         <nav
           aria-label="Main navigation"
-          className="hidden sm:block text-white"
+          className="hidden sm:block text-white text-preset-9--medium"
         >
           <ul className="flex gap-8">
             <li>

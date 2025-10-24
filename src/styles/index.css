@@ -52,6 +52,21 @@
   --text-preset-7--font-weight-medium: 500;
   --text-preset-7--font-weight-regular: 400;
   --text-preset-7--letter-spacing: 0px;
+
+  /* Preset 8 (14px) - Bold / Medium / Regular */
+  --text-preset-8: 0.875rem; /* 14px */
+  --text-preset-8--line-height: 1.25; /* 125% (Bold/Medium) */
+  --text-preset-8--line-height-regular: 1.75; /* 175% (Regular) */
+  --text-preset-8--font-weight-bold: 700;
+  --text-preset-8--font-weight-medium: 500;
+  --text-preset-8--font-weight-regular: 400;
+  --text-preset-8--letter-spacing: 0px;
+
+  /* Preset 9 (13px) - Medium */
+  --text-preset-9: 0.8125rem; /* 13px */
+  --text-preset-9--line-height: 1.25; /* 125% */
+  --text-preset-9--font-weight-medium: 500;
+  --text-preset-9--letter-spacing: 0px;
 }
 
 @utility text-preset-1 {
@@ -109,7 +124,7 @@
   letter-spacing: var(--text-preset-6--letter-spacing);
 }
 
-/* Preset 6 - Regular (uses 200% line-height) */
+/* Preset 6 - Regular (200% line-height) */
 @utility text-preset-6--regular {
   font-size: var(--text-preset-6);
   line-height: var(--text-preset-6--line-height-regular);
@@ -131,6 +146,36 @@
   line-height: var(--text-preset-7--line-height-regular);
   font-weight: var(--text-preset-7--font-weight-regular);
   letter-spacing: var(--text-preset-7--letter-spacing);
+}
+
+@utility text-preset-8--bold {
+  font-size: var(--text-preset-8);
+  line-height: var(--text-preset-8--line-height);
+  font-weight: var(--text-preset-8--font-weight-bold);
+  letter-spacing: var(--text-preset-8--letter-spacing);
+}
+
+/* Preset 8 - Medium */
+@utility text-preset-8--medium {
+  font-size: var(--text-preset-8);
+  line-height: var(--text-preset-8--line-height);
+  font-weight: var(--text-preset-8--font-weight-medium);
+  letter-spacing: var(--text-preset-8--letter-spacing);
+}
+
+/* Preset 8 - Regular (175% line-height) */
+@utility text-preset-8--regular {
+  font-size: var(--text-preset-8);
+  line-height: var(--text-preset-8--line-height-regular);
+  font-weight: var(--text-preset-8--font-weight-regular);
+  letter-spacing: var(--text-preset-8--letter-spacing);
+}
+
+@utility text-preset-9--medium {
+  font-size: var(--text-preset-9);
+  line-height: var(--text-preset-9--line-height);
+  font-weight: var(--text-preset-9--font-weight-medium);
+  letter-spacing: var(--text-preset-9--letter-spacing);
 }
 
 @layer base {
