@@ -21,10 +21,27 @@ export default function Header({ onOpenMenu }) {
           type="button"
           aria-label="Open menu"
           onClick={onOpenMenu}
-          className="cursor-pointer"
+          className="sm:hidden cursor-pointer"
         >
           <img src={iconMenu} alt="" aria-hidden="true" />
         </button>
+
+        <nav
+          aria-label="Main navigation"
+          className="hidden sm:block text-white"
+        >
+          <ul className="flex gap-8">
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#discover">Discover</a>
+            </li>
+            <li>
+              <a href="#get-started">Get started</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );
