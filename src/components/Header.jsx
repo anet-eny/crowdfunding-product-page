@@ -1,9 +1,13 @@
+import { useState } from "react";
 import logo from "../assets/logo.svg";
 import iconMenu from "../assets/icon-hamburger.svg";
+import iconClose from "../assets/icon-close-menu.svg";
 import imageMobile from "../assets/image-hero-mobile.jpg";
 import imageDesktop from "../assets/image-hero-desktop.jpg";
 
 export default function Header({ onOpenMenu }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="relative min-h-[300px] px-6 pt-8">
       <picture className="absolute inset-0 w-full h-full ">
@@ -20,10 +24,14 @@ export default function Header({ onOpenMenu }) {
         <button
           type="button"
           aria-label="Open menu"
-          onClick={onOpenMenu}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="sm:hidden cursor-pointer"
         >
-          <img src={iconMenu} alt="" aria-hidden="true" />
+          <img
+            src={isMenuOpen ? iconClose : iconMenu}
+            alt={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-hidden="true"
+          />
         </button>
 
         <nav
