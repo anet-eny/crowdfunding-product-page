@@ -4,6 +4,7 @@ import iconMenu from "../assets/icon-hamburger.svg";
 import iconClose from "../assets/icon-close-menu.svg";
 import imageMobile from "../assets/image-hero-mobile.jpg";
 import imageDesktop from "../assets/image-hero-desktop.jpg";
+import Menu from "./Menu";
 
 export default function Header({ onOpenMenu }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,6 +52,7 @@ export default function Header({ onOpenMenu }) {
           </ul>
         </nav>
       </div>
+      {isMenuOpen && <Menu onCloseMenu={() => setIsMenuOpen(false)} />}
     </header>
   );
 }
