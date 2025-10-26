@@ -21,7 +21,9 @@ export default function Header({ onOpenMenu }) {
       </picture>
 
       <div className="relative flex items-center justify-between">
-        <img src={logo} alt="Crowdfund logo" />
+        <a href="/">
+          <img src={logo} alt="Crowdfund logo" />
+        </a>
         <button
           type="button"
           aria-label="Open menu"
