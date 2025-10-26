@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 import logo from "../assets/logo.svg";
 import iconMenu from "../assets/icon-hamburger.svg";
 import iconClose from "../assets/icon-close-menu.svg";
@@ -8,6 +9,7 @@ import Menu from "./Menu";
 
 export default function Header({ onOpenMenu }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isSmallScreen = useMediaQuery("(max-width: 40rem)");
 
   return (
     <header className="relative min-h-[300px] px-6 pt-8">
@@ -54,7 +56,9 @@ export default function Header({ onOpenMenu }) {
           </ul>
         </nav>
       </div>
-      {isMenuOpen && <Menu onCloseMenu={() => setIsMenuOpen(false)} />}
+      {isMenuOpen && isSmallScreen && (
+        <Menu onCloseMenu={() => setIsMenuOpen(false)} />
+      )}
     </header>
   );
 }
