@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import logo from "../assets/logo.svg";
 import iconMenu from "../assets/icon-hamburger.svg";
@@ -10,6 +10,12 @@ import Menu from "./Menu";
 export default function Header({ onOpenMenu }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isSmallScreen = useMediaQuery("(max-width: 40rem)");
+
+  useEffect(() => {
+    if (isMenuOpen && !isSmallScreen) {
+      setIsMenuOpen(false);
+    }
+  });
 
   return (
     <header className="relative min-h-[300px] px-6 pt-8">
