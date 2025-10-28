@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <section>
       <Header />
-      <main className="px-6">
+      <main className="px-6 flex flex-col items-center">
         <Hero />
       </main>
     </section>

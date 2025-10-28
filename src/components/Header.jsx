@@ -28,7 +28,7 @@ export default function Header({ onOpenMenu }) {
         />
       </picture>
 
-      <div className="relative flex items-center justify-between">
+      <div className="relative flex items-center justify-between w-full max-w-4xl mx-auto">
         <a href="/">
           <img src={logo} alt="Crowdfund logo" />
         </a>
