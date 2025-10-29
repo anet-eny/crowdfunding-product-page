@@ -1,15 +1,40 @@
-export default function Menu({ onCloseMenu }) {
+import { useContext } from "react";
+import { MenuContext } from "../context/MenuContext";
+
+export default function Menu() {
+  const { closeMenu } = useContext(MenuContext);
   return (
     <div className="relative mt-8 z-10">
       <div className="bg-white rounded-lg">
         <nav className="flex flex-col px-5 divide-y divide-gray-200 text-preset-5--medium text-black">
-          <a href="#" onClick={onCloseMenu} className="py-5">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              closeMenu();
+            }}
+            className="py-5"
+          >
             About
           </a>
-          <a href="#" onClick={onCloseMenu} className="py-5">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              closeMenu();
+            }}
+            className="py-5"
+          >
             Discover
           </a>
-          <a href="#" onClick={onCloseMenu} className="py-5">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              closeMenu();
+            }}
+            className="py-5"
+          >
             Get started
           </a>
         </nav>

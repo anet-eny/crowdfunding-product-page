@@ -5,21 +5,21 @@ export const MenuContext = createContext();
 
 export function MenuProvider({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isDesktop = useMediaQuery("(min-width: 40rem)");
+  const isSmallScreen = useMediaQuery("(max-width: 40rem)");
 
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   useEffect(() => {
-    if (isMenuOpen && isDesktop) {
+    if (isMenuOpen && !isSmallScreen) {
       setIsMenuOpen(false);
     }
-  }, [isDesktop, isMenuOpen]);
+  }, [isSmallScreen, isMenuOpen]);
 
   return (
     <MenuContext.Provider
-      value={{ isMenuOpen, openMenu, closeMenu, toggleMenu }}
+      value={{ isMenuOpen, isSmallScreen, openMenu, closeMenu, toggleMenu }}
     >
       {children}
     </MenuContext.Provider>
