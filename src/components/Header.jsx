@@ -11,7 +11,7 @@ export default function Header() {
   const { isMenuOpen, toggleMenu, isSmallScreen } = useContext(MenuContext);
 
   return (
-    <header className="relative overflow-hidden min-h-[260px] sm:min-h-[180px] px-6 pt-8">
+    <header className="relative overflow-hidden min-h-[280px] sm:min-h-[180px] px-6 pt-8">
       <picture className="absolute inset-0 w-full h-full ">
         <source srcSet={imageDesktop} media="(min-width: 40rem)" />
         <img
