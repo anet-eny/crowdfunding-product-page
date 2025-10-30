@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { MenuContext } from "../context/MenuContext";
+import { useState, useEffect } from "react";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 import logo from "../assets/logo.svg";
 import iconMenu from "../assets/icon-hamburger.svg";
 import iconClose from "../assets/icon-close-menu.svg";
@@ -8,7 +8,14 @@ import imageDesktop from "../assets/image-hero-desktop.jpg";
 import Menu from "./Menu";
 
 export default function Header() {
-  const { isMenuOpen, toggleMenu, isSmallScreen } = useContext(MenuContext);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isSmallScreen = useMediaQuery("(max-width: 40rem)");
+
+  useEffect(() => {
+    if (isMenuOpen && !isSmallScreen) {
+      setIsMenuOpen(false);
+    }
+  }, [isSmallScreen, isMenuOpen]);
 
   return (
     <header className="relative overflow-hidden min-h-[280px] sm:min-h-[180px] px-6 pt-8">
@@ -28,7 +35,7 @@ export default function Header() {
         <button
           type="button"
           aria-label="Open menu"
-          onClick={toggleMenu}
+          onClick={() => setIsMenuOpen((prev) => !prev)}
           className="sm:hidden cursor-pointer"
         >
           <img
@@ -55,7 +62,9 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-      {isMenuOpen && isSmallScreen && <Menu />}
+      {isMenuOpen && isSmallScreen && (
+        <Menu onCloseMenu={() => setIsMenuOpen(false)} />
+      )}
     </header>
   );
 }
