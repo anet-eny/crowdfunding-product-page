@@ -1,4 +1,5 @@
 import logo from "../assets/logo-mastercraft.svg";
+import Button from "./Button";
 
 export default function Hero() {
   return (
@@ -12,6 +13,9 @@ export default function Hero() {
       <p className="text-preset-8--regular text-gray-500 mb-8">
         A beautifully handcrafted monitor stand to reduce neck and eye strain.
       </p>
+      <div>
+        <Button>Back this project</Button>
+      </div>
     </section>
   );
 }
