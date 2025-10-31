@@ -1,5 +1,6 @@
 import logo from "../assets/logo-mastercraft.svg";
 import Button from "./Button";
+import BookmarkButton from "./BookmarkButton";
 
 export default function Hero() {
   return (
@@ -15,6 +16,7 @@ export default function Hero() {
       </p>
       <div>
         <Button>Back this project</Button>
+        <BookmarkButton />
       </div>
     </section>
   );
