@@ -1,5 +1,5 @@
 import { useState } from "react";
-import bookmarkIcon from "../assets/icon-bookmark.svg";
+import BookmarkIcon from "./icons/BookmarkIcon";
 
 export default function BookmarkButton() {
   const [bookmarked, setBookmarked] = useState(false);
@@ -12,11 +12,7 @@ export default function BookmarkButton() {
       }`}
     >
       <div className="">
-        <img
-          src={bookmarkIcon}
-          alt="Bookmark icon"
-          className="w-14 h-14 text-teal-200"
-        />
+        <BookmarkIcon variant={bookmarked ? "active" : "inactive"} />
       </div>
       <span
         className={`hidden sm:inline-block text-preset-6 font-bold ${
