@@ -2,6 +2,7 @@ export const initialState = {
   totalPledged: 89914,
   goal: 100000,
   backers: 5007,
+  daysLeft: 56,
   bookmarked: false,
   pledges: [
     {

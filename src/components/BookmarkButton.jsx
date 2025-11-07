@@ -1,8 +1,9 @@
 import { useState } from "react";
 import BookmarkIcon from "./icons/BookmarkIcon";
+import { initialState } from "../data/initialState";
 
 export default function BookmarkButton() {
-  const [bookmarked, setBookmarked] = useState(false);
+  const [bookmarked, setBookmarked] = useState(initialState.bookmarked);
 
   return (
     <button
