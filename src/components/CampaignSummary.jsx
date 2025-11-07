@@ -26,6 +26,19 @@ export default function CampaignSummary({
         <div className="w-20 sm:w-px h-px sm:h-[3.5em] mx-auto sm:mx-8 my-6 sm:my-0  bg-gray-200" />
         <SummaryItem value={daysLeft} label="days left" />
       </div>
+      <div className="mt-6">
+        <div className="w-full h-3 bg-gray-200 rounded-full">
+          <div
+            className="h-full bg-teal-400 rounded-full"
+            style={{ width: `${percent}%` }}
+            role="progressbar"
+            aria-valuenow={percent}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label={`Funding progress ${percent}%`}
+          />
+        </div>
+      </div>
     </section>
   );
 }
