@@ -15,8 +15,8 @@ export default function CampaignSummary({
 }) {
   const percent = Math.min(100, Math.round((totalPledged / goal) * 100));
   return (
-    <section>
-      <div className="flex flex-col sm:flex-row">
+    <section className="w-full max-w-2xl px-6 sm:px-12 bg-white border border-gray-200 rounded-lg">
+      <div className="flex flex-col sm:flex-row justify-center">
         <SummaryItem
           value={`$${totalPledged.toLocaleString()}`}
           label={`of ${goal.toLocaleString()} backed`}

@@ -4,7 +4,7 @@ import BookmarkButton from "./BookmarkButton";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col text-center max-w-3xl -mt-10 px-6 sm:px-12 pt-12 pb-8 bg-white border border-gray-200 rounded-lg">
+    <section className="relative flex flex-col text-center w-full max-w-2xl -mt-10 px-6 sm:px-12 pt-12 pb-8 bg-white border border-gray-200 rounded-lg">
       <img
         src={logo}
         className="absolute -top-7 max-w-14 self-center"
