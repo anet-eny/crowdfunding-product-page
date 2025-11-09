@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import CampaignSummary from "../components/CampaignSummary";
+import RewardList from "../components/RewardList";
 import { initialState } from "../data/initialState";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
           backers={backers}
           daysLeft={daysLeft}
         />
+        <RewardList />
       </main>
     </section>
   );
