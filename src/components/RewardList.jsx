@@ -18,7 +18,7 @@ export default function RewardList() {
         desk space below your computer to allow notepads, pens, and USB sticks
         to be stored under the stand.
       </p>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-6 mt-6 md:mt-8">
         {initialState.pledges.map((pledge) => (
           <RewardItem
             key={pledge.id}
