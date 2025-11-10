@@ -1,6 +1,6 @@
 export default function Button({ variant = "active", onClick, children }) {
   const baseStyles =
-    "text-preset-6 font-bold text-white px-6 py-4 rounded-full transition-colors duration-200 flex-shrink-0";
+    "text-preset-6 font-bold text-white px-6 py-4 rounded-full transition-colors duration-200 flex-shrink-0 min-w-40";
 
   const variants = {
     active: "bg-teal-500 hover:bg-teal-800 cursor-pointer",
