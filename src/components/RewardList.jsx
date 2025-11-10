@@ -19,15 +19,17 @@ export default function RewardList() {
         to be stored under the stand.
       </p>
       <div className="flex flex-col gap-6 mt-6 md:mt-8">
-        {initialState.pledges.map((pledge) => (
-          <RewardItem
-            key={pledge.id}
-            title={pledge.title}
-            min={pledge.min}
-            description={pledge.description}
-            remaining={pledge.remaining}
-          />
-        ))}
+        {initialState.pledges
+          .filter((pledge) => pledge.remaining !== null)
+          .map((pledge) => (
+            <RewardItem
+              key={pledge.id}
+              title={pledge.title}
+              min={pledge.min}
+              description={pledge.description}
+              remaining={pledge.remaining}
+            />
+          ))}
       </div>
     </section>
   );
