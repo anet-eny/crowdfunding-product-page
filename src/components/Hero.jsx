@@ -1,8 +1,12 @@
+import { useState } from "react";
 import logo from "../assets/logo-mastercraft.svg";
 import Button from "./Button";
 import BookmarkButton from "./BookmarkButton";
+import BackProjectModal from "./BackProjectModal";
 
 export default function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="relative flex flex-col text-center w-full max-w-2xl -mt-10 px-6 sm:px-10 pt-12 pb-8 bg-white border border-gray-200 rounded-lg">
       <img
@@ -17,9 +21,14 @@ export default function Hero() {
         A beautifully handcrafted monitor stand to reduce neck and eye strain.
       </p>
       <div className="flex justify-between gap-2 overflow-x-auto">
-        <Button>Back this project</Button>
+        <Button onClick={() => setIsModalOpen(true)}>Back this project</Button>
         <BookmarkButton />
       </div>
+
+      <BackProjectModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 }
