@@ -32,16 +32,16 @@ export default function BackProjectModal({ isOpen, onClose }) {
       aria-modal="true"
       className="fixed inset-0 z-50 flex items-start justify-center p-6"
     >
-      <div className="absolute inset-0 bg-black/30" onClick={onClose}>
-        <div className="relative z-10 w-full max-w-2xl bg-white rounded-lg shadow-2xl">
-          <button aria-label="Close modal" onClick={onClose}>
-            ✕
-          </button>
-          <h2 className="text-preset-5--bold sm:text-preset-3 text-black">
-            Back this project
-          </h2>
-          <p className="text-preset-8--regular sm:text-preset-6--regular text-gray-500"></p>
-          {/* <form onSubmit={handleConfirm}>
+      <div className="absolute inset-0 bg-black/30" onClick={onClose} />
+      <div className="relative z-10 w-full max-w-2xl mt-20 mx-auto bg-white rounded-lg shadow-2xl">
+        <button aria-label="Close modal" onClick={onClose}>
+          ✕
+        </button>
+        <h2 className="text-preset-5--bold sm:text-preset-3 text-black">
+          Back this project
+        </h2>
+        <p className="text-preset-8--regular sm:text-preset-6--regular text-gray-500"></p>
+        {/* <form onSubmit={handleConfirm}>
             {pledges.map((p, i) => {
               const available = p.remaining === null || p.remaining > 0;
               return (
@@ -54,7 +54,6 @@ export default function BackProjectModal({ isOpen, onClose }) {
               );
             })}
           </form> */}
-        </div>
       </div>
     </div>
   );
