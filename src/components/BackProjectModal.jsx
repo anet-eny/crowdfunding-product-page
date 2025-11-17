@@ -4,6 +4,7 @@ import { usePledgeSelection } from "../hooks/usePledgeSelection";
 import { useContext } from "react";
 import { CrowdfundingContext } from "../context/CrowdfundingContext";
 import iconCloseModal from "../assets/icon-close-modal.svg";
+import PledgeOption from "./PledgeOption";
 
 export default function BackProjectModal({ isOpen, onClose }) {
   const {
@@ -51,50 +52,15 @@ export default function BackProjectModal({ isOpen, onClose }) {
             in the world?
           </p>
           <form className="flex flex-col gap-6 my-8" onSubmit={handleConfirm}>
-            {pledges.map((p, i) => {
-              const available = p.remaining === null || p.remaining > 0;
-              return (
-                <fieldset
-                  key={p.id}
-                  className={`border border-gray-200 rounded-lg p-4 ${
-                    !available ? "opacity-50" : ""
-                  }`}
-                >
-                  <label className="w-full cursor-pointer">
-                    <div className="flex gap-4">
-                      <input
-                        ref={i === 0 ? firstRadioRef : null}
-                        type="radio"
-                        name="pledge"
-                        value={p.id}
-                        checked={selectedId === p.id}
-                        onChange={() => handleSelect(p.id, p.min)}
-                        disabled={!available}
-                      />
-                      <div className="grow">
-                        <h3 className="text-preset-8--bold">{p.title}</h3>
-                        <span className="text-preset-8--medium mt-2 sm:mt-0 text-teal-400">
-                          Pledge ${p.min} or more
-                        </span>
-                      </div>
-                    </div>
-                    <p className="text-preset-8-regular text-gray-500 mt-4">
-                      {p.description}
-                    </p>
-                    {p.remaining !== null && (
-                      <div className="flex items-center gap-1.5 mt-4">
-                        <span className="text-preset-5--bold text-black">
-                          {p.remaining}
-                        </span>
-                        <span className="text-preset-7--regular text-gray-500">
-                          left
-                        </span>
-                      </div>
-                    )}
-                  </label>
-                </fieldset>
-              );
-            })}
+            {pledges.map((p, i) => (
+              <PledgeOption
+                key={p.id}
+                pledge={p}
+                isSelected={selectedId === p.id}
+                onSelect={() => handleSelect(p.id, p.min)}
+                firstRadioRef={i === 0 ? firstRadioRef : null}
+              />
+            ))}
           </form>
         </div>
       </div>
