@@ -51,7 +51,7 @@ export default function BackProjectModal({ isOpen, onClose }) {
             Want to support us in bringing Mastercraft Bamboo Monitor Riser out
             in the world?
           </p>
-          <form className="flex flex-col gap-6 my-8" onSubmit={handleConfirm}>
+          <div className="flex flex-col gap-6 my-8">
             {pledges.map((p, i) => (
               <PledgeOption
                 key={p.id}
@@ -59,9 +59,13 @@ export default function BackProjectModal({ isOpen, onClose }) {
                 isSelected={selectedId === p.id}
                 onSelect={() => handleSelect(p.id, p.min)}
                 firstRadioRef={i === 0 ? firstRadioRef : null}
+                amount={amount}
+                setAmount={setAmount}
+                onConfirm={handleConfirm}
+                error={error}
               />
             ))}
-          </form>
+          </div>
         </div>
       </div>
     </div>

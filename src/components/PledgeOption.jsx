@@ -1,8 +1,15 @@
+import Button from "./Button";
+import PledgeAmountBox from "./PledgeAmountBox";
+
 export default function PledgeOption({
   pledge,
   isSelected,
   onSelect,
   firstRadioRef,
+  amount,
+  setAmount,
+  onConfirm,
+  error,
 }) {
   const available = pledge.remaining === null || pledge.remaining > 0;
   return (
@@ -39,6 +46,22 @@ export default function PledgeOption({
             </span>
             <span className="text-preset-7--regular text-gray-500">left</span>
           </div>
+        )}
+        {isSelected && pledge.min > 0 && (
+          <div className="mt-4">
+            <PledgeAmountBox
+              min={pledge.min}
+              amount={amount}
+              setAmount={setAmount}
+              onConfirm={onConfirm}
+              error={error}
+            />
+          </div>
+        )}
+        {isSelected && pledge.min === 0 && (
+          <Button type="button" onClick={onConfirm}>
+            Continue
+          </Button>
         )}
       </label>
     </fieldset>
