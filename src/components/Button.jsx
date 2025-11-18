@@ -1,4 +1,9 @@
-export default function Button({ variant = "active", onClick, children }) {
+export default function Button({
+  variant = "active",
+  onClick,
+  children,
+  type = "button",
+}) {
   const baseStyles =
     "text-preset-6 font-bold text-white px-6 py-4 rounded-full transition-colors duration-200 flex-shrink-0 min-w-40";
 
@@ -12,6 +17,7 @@ export default function Button({ variant = "active", onClick, children }) {
       className={`${baseStyles} ${variants[variant]}`}
       onClick={variant === "active" ? onClick : undefined}
       disabled={variant === "disabled"}
+      type={type}
     >
       {children}
     </button>
