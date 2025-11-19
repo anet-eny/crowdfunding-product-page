@@ -3,9 +3,10 @@ export default function Button({
   onClick,
   children,
   type = "button",
+  className = "",
 }) {
   const baseStyles =
-    "text-preset-6 font-bold text-white px-6 py-4 rounded-full transition-colors duration-200 flex-shrink-0 min-w-40";
+    "text-preset-6 font-bold text-white px-6 py-4 rounded-full transition-colors duration-200 flex-shrink-0 ";
 
   const variants = {
     active: "bg-teal-500 hover:bg-teal-800 cursor-pointer",
@@ -14,7 +15,7 @@ export default function Button({
 
   return (
     <button
-      className={`${baseStyles} ${variants[variant]}`}
+      className={`${baseStyles} ${variants[variant]} ${className}`}
       onClick={variant === "active" ? onClick : undefined}
       disabled={variant === "disabled"}
       type={type}

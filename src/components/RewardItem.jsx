@@ -23,7 +23,10 @@ export default function RewardItem({ title, min, description, remaining }) {
           <span className="text-preset-1">{remaining}</span>
           <span className="text-preset-7--regular text-gray-500">left</span>
         </div>
-        <Button variant={available ? "active" : "disabled"}>
+        <Button
+          className="min-w-40"
+          variant={available ? "active" : "disabled"}
+        >
           {available ? "Select Reward" : "Out of stock"}
         </Button>
       </div>

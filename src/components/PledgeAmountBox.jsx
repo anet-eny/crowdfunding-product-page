@@ -28,7 +28,6 @@ export default function PledgeAmountBox({
             />
           </div>
           <Button type="submit">Continue</Button>
-          {/* upravit Button className a submit */}
         </div>
       </div>
       {error && <div>{error}</div>}
