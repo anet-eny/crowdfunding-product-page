@@ -14,12 +14,12 @@ export default function PledgeAmountBox({
           Enter your pledge
         </label>
         <div className="flex gap-4 justify-between">
-          <div className="flex items-center gap-2 px-5 py-2 border border-gray-200 rounded-full max-w-25">
+          <div className="flex items-center gap-2 px-5 py-2 border border-gray-200 rounded-full w-25">
             <span className="text-preset-8-bold text-gray-200">$</span>
             <input
               type="number"
               inputMode="numeric"
-              className="text-preset-8--bold text-black"
+              className="flex-1 min-w-0 text-preset-8--bold text-black bg-transparent outline-none appearance-textfield"
               min={min}
               placeholder={String(min)}
               value={amount}
