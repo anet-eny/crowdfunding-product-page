@@ -22,6 +22,11 @@ export function usePledgeSelection({
   }, [isOpen]);
 
   function handleSelect(id, min) {
+    if (selectedId === id) {
+      setError("");
+      return;
+    }
+
     setSelectedId(id);
     setAmount(min > 0 ? String(min) : "");
     setError("");

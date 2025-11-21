@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "./Button";
 
 export default function PledgeAmountBox({
@@ -7,6 +8,9 @@ export default function PledgeAmountBox({
   onConfirm,
   error,
 }) {
+  const [isFocused, setIsFocused] = useState(false);
+  const effectivePlaceholder = !isFocused && amount === "" ? String(min) : "";
+
   return (
     <form onSubmit={onConfirm}>
       <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4 border-t border-gray-200 p-6 pb-0 mt-6">
@@ -17,13 +21,27 @@ export default function PledgeAmountBox({
           <div className="flex items-center gap-2 px-5 py-2 border border-gray-200 rounded-full w-25">
             <span className="text-preset-8-bold text-gray-200">$</span>
             <input
-              type="number"
+              type="text"
               inputMode="numeric"
               className="flex-1 min-w-0 text-preset-8--bold text-black bg-transparent outline-none appearance-textfield"
               min={min}
-              placeholder={String(min)}
+              placeholder={effectivePlaceholder}
               value={amount}
-              onChange={(e) => setAmount(e.target.value)}
+              onChange={(e) => {
+                const raw = e.target.value;
+                if (raw === "") {
+                  setAmount("");
+                  return;
+                }
+                const cleaned = raw.replace(/[^\d]/g, "");
+                setAmount(cleaned);
+              }}
+              onFocus={() => {
+                setIsFocused(true);
+              }}
+              onBlur={() => {
+                setIsFocused(false);
+              }}
               aria-label={`Pledge amount (minimum $${min})`}
             />
           </div>
