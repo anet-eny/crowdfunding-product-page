@@ -1,20 +1,14 @@
-import { useLockBodyScroll } from "../hooks/useLockBodyScroll";
-import { useEscapeToClose } from "../hooks/useEscapeToClose";
 import { usePledgeSelection } from "../hooks/usePledgeSelection";
 import { useContext } from "react";
 import { CrowdfundingContext } from "../context/CrowdfundingContext";
 import iconCloseModal from "../assets/icon-close-modal.svg";
 import PledgeOption from "./PledgeOption";
 
-export default function BackProjectModal({ isOpen, onClose }) {
+export default function BackProjectModal({ isOpen, onClose, onSuccess }) {
   const {
     state: { pledges },
     makePledge,
   } = useContext(CrowdfundingContext);
-
-  useLockBodyScroll(isOpen);
-
-  useEscapeToClose(isOpen, onClose);
 
   const {
     selectedId,
@@ -25,6 +19,14 @@ export default function BackProjectModal({ isOpen, onClose }) {
     handleConfirm,
     setAmount,
   } = usePledgeSelection({ pledges, makePledge, onClose, isOpen });
+
+  function onConfirmWrapper(e) {
+    const res = handleConfirm(e);
+    if (res && res.ok) {
+      onSuccess?.();
+    }
+    return res;
+  }
 
   if (!isOpen) return null;
 
@@ -61,7 +63,7 @@ export default function BackProjectModal({ isOpen, onClose }) {
                 firstRadioRef={i === 0 ? firstRadioRef : null}
                 amount={amount}
                 setAmount={setAmount}
-                onConfirm={handleConfirm}
+                onConfirm={onConfirmWrapper}
                 error={error}
               />
             ))}

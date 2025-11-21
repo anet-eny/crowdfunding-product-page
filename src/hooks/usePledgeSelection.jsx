@@ -45,8 +45,6 @@ export function usePledgeSelection({
 
     makePledge(selectedId, numeric || 0);
 
-    onClose?.();
-
     setSelectedId(null);
     setAmount("");
     setError("");

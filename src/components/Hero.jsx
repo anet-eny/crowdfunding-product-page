@@ -3,9 +3,25 @@ import logo from "../assets/logo-mastercraft.svg";
 import Button from "./Button";
 import BookmarkButton from "./BookmarkButton";
 import BackProjectModal from "./BackProjectModal";
+import SuccessModal from "./SuccessModal";
+import { useLockBodyScroll } from "../hooks/useLockBodyScroll";
+import { useEscapeToClose } from "../hooks/useEscapeToClose";
 
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+
+  useLockBodyScroll(isModalOpen || isSuccessOpen);
+
+  useEscapeToClose(isModalOpen || isSuccessOpen, () => {
+    if (isSuccessOpen) {
+      setIsSuccessOpen(false);
+      return;
+    }
+    if (isModalOpen) {
+      setIsModalOpen(false);
+    }
+  });
 
   return (
     <section className="relative flex flex-col text-center w-full max-w-2xl -mt-10 px-6 sm:px-10 pt-12 pb-8 bg-white border border-gray-200 rounded-lg">
@@ -28,7 +44,19 @@ export default function Hero() {
       <BackProjectModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        onSuccess={() => {
+          setIsModalOpen(false);
+          setIsSuccessOpen(true);
+        }}
       />
+      {isSuccessOpen && (
+        <SuccessModal
+          isOpen={isSuccessOpen}
+          onClose={() => {
+            setIsSuccessOpen(false);
+          }}
+        />
+      )}
     </section>
   );
 }
