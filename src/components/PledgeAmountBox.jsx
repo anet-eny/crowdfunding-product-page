@@ -23,7 +23,7 @@ export default function PledgeAmountBox({
             <input
               type="text"
               inputMode="numeric"
-              className="flex-1 min-w-0 text-preset-8--bold text-black bg-transparent outline-none appearance-textfield"
+              className="flex-1 min-w-0 text-preset-8--bold text-black bg-transparent outline-none appearance-textfield placeholder:text-gray-400"
               min={min}
               placeholder={effectivePlaceholder}
               value={amount}
@@ -47,8 +47,10 @@ export default function PledgeAmountBox({
           </div>
           <Button type="submit">Continue</Button>
         </div>
+        {error && (
+          <div className="text-preset-8--regular text-gray-500">{error}</div>
+        )}
       </div>
-      {error && <div>{error}</div>}
     </form>
   );
 }
