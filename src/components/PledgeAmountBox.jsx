@@ -18,7 +18,7 @@ export default function PledgeAmountBox({
           Enter your pledge
         </label>
         <div className="flex gap-4 justify-between">
-          <div className="flex items-center gap-2 px-5 py-2 border border-gray-200 rounded-full w-25">
+          <div className="flex items-center gap-2 px-5 py-2 border border-gray-200 rounded-full w-25 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-teal-800">
             <span className="text-preset-8-bold text-gray-200">$</span>
             <input
               type="text"

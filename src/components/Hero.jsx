@@ -36,7 +36,7 @@ export default function Hero() {
       <p className="text-preset-8--regular sm:text-preset-6--regular text-gray-500 mb-8">
         A beautifully handcrafted monitor stand to reduce neck and eye strain.
       </p>
-      <div className="flex justify-between gap-2 overflow-x-auto">
+      <div className="flex justify-between gap-2">
         <Button onClick={() => setIsModalOpen(true)}>Back this project</Button>
         <BookmarkButton />
       </div>

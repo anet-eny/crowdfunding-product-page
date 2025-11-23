@@ -19,7 +19,7 @@ export default function PledgeOption({
       }`}
     >
       <label className="flex flex-col w-full cursor-pointer">
-        <div className="flex gap-4 px-6">
+        <div className="flex items-center gap-4 px-6">
           <input
             ref={firstRadioRef}
             type="radio"
@@ -28,6 +28,24 @@ export default function PledgeOption({
             checked={isSelected}
             onChange={onSelect}
             disabled={!available}
+            className="
+              h-6 w-6
+              appearance-none 
+              rounded-full 
+              border border-gray-400
+              cursor-pointer
+              relative
+            checked:border-teal-600
+
+              before:content-['']
+              before:absolute
+              before:inset-1
+              before:rounded-full
+             before:bg-teal-600
+              before:scale-0
+              checked:before:scale-100
+              before:transition-transform
+            "
           />
           <div className="sm:flex gap-4 items-center flex-1">
             <h3 className="text-preset-8--bold">{pledge.title}</h3>
@@ -46,7 +64,7 @@ export default function PledgeOption({
             )}
           </div>
         </div>
-        <p className="text-preset-8-regular text-gray-500 mt-4 px-6 sm:pl-13">
+        <p className="text-preset-8-regular text-gray-500 mt-4 px-6 sm:pl-16">
           {pledge.description}
         </p>
         {pledge.remaining !== null && (
