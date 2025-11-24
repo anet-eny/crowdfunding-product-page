@@ -43,3 +43,9 @@ This project is a solution to the Browser Extension Manager UI challenge on [Fro
 - **Modal accessibility:** Focus trapping, keyboard navigation, and proper aria attributes.
 - **Dynamic rendering:** Showing/hiding UI sections depending on selected pledge tier.
 - **Tailwind CSS patterns:** Creating reusable components and clean utility-based styles.
+
+---
+
+## View Project
+
+https://anet-eny.github.io/crowdfunding-product-page/
