@@ -24,7 +24,7 @@ export default function Header() {
         <img
           src={imageMobile}
           alt="Desktop computer on a wooden stand"
-          className="object-cover object-center bg-black/25"
+          className="w-full h-full object-cover object-top bg-black/25"
         />
       </picture>
 
