@@ -10,7 +10,7 @@ export default function Button({
 
   const variants = {
     active:
-      "bg-teal-500 hover:bg-teal-800 focus:outline-2 focus:outline-offset-2 focus:outline-teal-800 cursor-pointer",
+      "bg-teal-500 hover:bg-teal-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-800 cursor-pointer",
     disabled: "bg-gray-500 cursor-not-allowed",
   };
 
