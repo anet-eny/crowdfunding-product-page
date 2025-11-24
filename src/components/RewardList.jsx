@@ -1,7 +1,12 @@
-import { initialState } from "../data/initialState";
+import { useContext } from "react";
+import { CrowdfundingContext } from "../context/CrowdfundingContext";
 import RewardItem from "./RewardItem";
 
 export default function RewardList() {
+  const {
+    state: { pledges },
+  } = useContext(CrowdfundingContext);
+
   return (
     <section className="w-full max-w-2xl border border-gray-200 rounded-xl px-6 py-10 sm:p-10">
       <h2 className="text-preset-4">About this project</h2>
@@ -19,7 +24,7 @@ export default function RewardList() {
         to be stored under the stand.
       </p>
       <div className="flex flex-col gap-6 mt-6 md:mt-8">
-        {initialState.pledges
+        {pledges
           .filter((pledge) => pledge.remaining !== null)
           .map((pledge) => (
             <RewardItem
