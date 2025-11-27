@@ -1,8 +1,8 @@
-# Crowdfund Product Page
+# Crowdfunding Product Page
 
 A responsive crowdfunding UI built with **React** and **Tailwind CSS**.
 Users can browse pledge tiers, select a reward, enter a custom pledge amount, and support a product.
-This project is a solution to the Browser Extension Manager UI challenge on [Frontend Mendtor](https://www.frontendmentor.io/challenges/crowdfunding-product-page-7uvcZe7ZR).
+This project is a solution to the Browser Extension Manager UI challenge on [Frontend Mentor](https://www.frontendmentor.io/challenges/crowdfunding-product-page-7uvcZe7ZR).
 
 ---
 
@@ -39,10 +39,23 @@ This project is a solution to the Browser Extension Manager UI challenge on [Fro
 
 ## Key Learnings
 
-- **React state flow:** How to manage controlled inputs and conditional UI based on user interactions.
-- **Modal accessibility:** Focus trapping, keyboard navigation, and proper aria attributes.
-- **Dynamic rendering:** Showing/hiding UI sections depending on selected pledge tier.
-- **Tailwind CSS patterns:** Creating reusable components and clean utility-based styles.
+- **React state flow**  
+  I focused on understanding how to manage controlled inputs and conditional UI based on user interactions.
+
+- **Modal accessibility**  
+  I worked on implementing accessible modal behavior, including focus trapping, keyboard navigation, and the correct use of ARIA attributes. This gave me a clearer understanding of what is required to build a modal that is fully usable.
+
+- **Dynamic rendering**  
+  I learned how to conditionally render different UI sections based on the selected pledge tier.
+
+- **React Context**  
+  I gained more experience working with React Context, especially in separating global state from component-level state and ensuring that shared data remains consistent across the UI.
+
+- **Custom React hooks**  
+  I created several custom hooks to extract reusable logic and keep components cleaner and more focused. This helped improve the overall organization and maintainability of the project.
+
+- **Tailwind CSS patterns**  
+  I explored how to create clean, reusable components using utility-based Tailwind CSS classes. This helped me establish a more organized styling approach across the project.
 
 ---
 
