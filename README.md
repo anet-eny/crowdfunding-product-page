@@ -2,7 +2,7 @@
 
 A responsive crowdfunding UI built with **React** and **Tailwind CSS**.
 Users can browse pledge tiers, select a reward, enter a custom pledge amount, and support a product.
-This project is a solution to the Browser Extension Manager UI challenge on [Frontend Mentor](https://www.frontendmentor.io/challenges/crowdfunding-product-page-7uvcZe7ZR).
+This project is a solution to the Crowdfunding Product Page UI challenge on [Frontend Mentor](https://www.frontendmentor.io/challenges/crowdfunding-product-page-7uvcZe7ZR).
 
 ---
 
